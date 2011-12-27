@@ -435,6 +435,7 @@ sub _hdlr_splitvars {
         local $vars->{ __last__ }  = 1 if $i == scalar @vals;
         local $vars->{ __odd__ }   = ( $i % 2 ) == 1;
         local $vars->{ __even__ }  = ( $i % 2 ) == 0;
+        local $vars->{ __length__ } = scalar @vals;
         my $out = $builder->build( $ctx, $tokens, $cond );
         $res .= $out;
         $res .= $glue if $glue && $i != scalar @vals;

@@ -38,6 +38,7 @@ function smarty_block_mtsplitvars( $args, $content, &$ctx, &$repeat ) {
         $ctx->__stash[ 'vars' ][ '__even__' ] = ( $count % 2 ) == 0;
         $ctx->__stash[ 'vars' ][ '__first__' ] = $count == 1;
         $ctx->__stash[ 'vars' ][ '__last__' ] = ( $count == $max );
+        $ctx->__stash[ 'vars' ][ '__length__' ] = $ctx->stash( '__mtsplit_vars_max' );
         $ctx->stash( '__mtsplit_vars_counter', $count );
         if ( $content && $glue ) {
             $content .= $glue;
